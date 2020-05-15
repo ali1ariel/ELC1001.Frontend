@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView} from 'react-native'
 
 const input = [{
     _id: "id_do_look_1",
@@ -57,7 +57,7 @@ export default class Display extends Component {
 
         return (
           
-            <View>
+            <ScrollView>
                 <View style={stylesImage.container}>
                     <View style={stylesInfo.title}>
                         <Text style={stylesInfo.h1}>{input[0].clothe_leg.clothingModel}</Text>
@@ -81,7 +81,7 @@ export default class Display extends Component {
                     </TouchableOpacity>
 
                 </View>
-            </View>
+            </ScrollView>
         )
     }
 }
