@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Image, StyleSheet } from 'react-native'
 
 
 const input = [{
@@ -27,11 +27,38 @@ const input = [{
 }
 ]
 
+const stylesImage = StyleSheet.create({
+    container: {
+      padding: 50,
+      alignItems: "center",
+      backgroundColor: "#DF928E"
+    },
+    logo: {
+      width: 200,
+      height: 200,
+      resizeMode: "center",
+      borderRadius: 30,
+    },
+    boxWithShadow: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,  
+        elevation: 10,
+        borderRadius: 30,
+        backgroundColor: "#fff"
+    }
+  });
+
 export default class Display extends Component {
     render() {
         return (
             <View>
-                <Text>Display Peça</Text>
+                <View style={stylesImage.container}>
+                    <View  style={stylesImage.boxWithShadow}>
+                        <Image style={stylesImage.logo} source={{uri: input[0].clothe_leg.image}} />
+                    </View>
+                </View>
             </View>
         )
     }
