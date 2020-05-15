@@ -26,29 +26,6 @@ const input = [{
 }
 ]
 
-const stylesImage = StyleSheet.create({
-    container: {
-      padding: 50,
-      alignItems: "center",
-      backgroundColor: "#DF928E"
-    },
-    logo: {
-      width: 200,
-      height: 200,
-      resizeMode: "center",
-      borderRadius: 30,
-    },
-    boxWithShadow: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,  
-        elevation: 10,
-        borderRadius: 30,
-        backgroundColor: "#fff"
-    }
-  });
-
 export default class Display extends Component {
     
     render() {
@@ -58,26 +35,26 @@ export default class Display extends Component {
         return (
           
             <ScrollView>
-                <View style={stylesImage.container}>
-                    <View style={stylesInfo.title}>
-                        <Text style={stylesInfo.h1}>{input[0].clothe_leg.clothingModel}</Text>
+                <View style={styles.imageContainer}>
+                    <View style={styles.title}>
+                        <Text style={styles.h1}>{input[0].clothe_leg.clothingModel}</Text>
                     </View>
           
-                    <View  style={stylesImage.boxWithShadow}>
-                        <Image style={stylesImage.logo} source={{uri: input[0].clothe_leg.image}} />
+                    <View  style={styles.boxWithShadow}>
+                        <Image style={styles.logo} source={{uri: input[0].clothe_leg.image}} />
                     </View>
           
-                    <View style={stylesInfo.infomations}>
-                        <Text style={stylesInfo.h2}>
-                            <Text style={stylesInfo.textHighlight}>Fabricante: </Text>{input[0].clothe_leg.manufacturer}
+                    <View style={styles.infomations}>
+                        <Text style={styles.h2}>
+                            <Text style={styles.textHighlight}>Fabricante: </Text>{input[0].clothe_leg.manufacturer}
                         </Text>
-                        <Text style={stylesInfo.h2}>
-                            <Text style={stylesInfo.textHighlight}>Descrição: </Text>{input[0].clothe_leg.description}
+                        <Text style={styles.h2}>
+                            <Text style={styles.textHighlight}>Descrição: </Text>{input[0].clothe_leg.description}
                         </Text>
                     </View>
           
-                    <TouchableOpacity style={stylesInfo.button} onPress={() => goBack()}>
-                        <Text style={stylesInfo.buttonText}>OK</Text>
+                    <TouchableOpacity style={styles.button} onPress={() => goBack()}>
+                        <Text style={styles.buttonText}>OK</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -86,7 +63,29 @@ export default class Display extends Component {
     }
 }
 
-const stylesInfo = StyleSheet.create({
+const styles = StyleSheet.create({
+    imageContainer: {
+        padding: 50,
+        alignItems: "center",
+        backgroundColor: "#DF928E"
+      },
+
+      logo: {
+        width: 200,
+        height: 200,
+        resizeMode: "center",
+        borderRadius: 30,
+      },
+
+      boxWithShadow: {
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 1 },
+          shadowOpacity: 0.8,
+          shadowRadius: 2,  
+          elevation: 10,
+          borderRadius: 30,
+          backgroundColor: "#fff"
+      },
 
     container:{
         flex: 1,
@@ -136,7 +135,7 @@ const stylesInfo = StyleSheet.create({
     button: {
         width: '90%',
         padding: 18,
-        backgroundColor: '#DF928E',
+        backgroundColor: '#cddada',
         borderRadius: 16,
         borderWidth: 0,
         borderColor: '#FFF',
@@ -147,7 +146,7 @@ const stylesInfo = StyleSheet.create({
 
     buttonText: {
         fontSize: 18,
-        color: '#FFF',
+        color: '#000',
         marginTop: 4,
         marginBottom: 4,
         fontWeight: 'bold'
