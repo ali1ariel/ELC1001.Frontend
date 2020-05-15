@@ -28,28 +28,6 @@ const input = [{
 }
 ]
 
-const stylesImage = StyleSheet.create({
-    container: {
-      padding: 50,
-      alignItems: "center",
-      backgroundColor: "#DF928E"
-    },
-    logo: {
-      width: 200,
-      height: 200,
-      resizeMode: "center",
-      borderRadius: 30,
-    },
-    boxWithShadow: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,  
-        elevation: 10,
-        borderRadius: 30,
-        backgroundColor: "#fff"
-    }
-  });
 
 export default class Display extends Component {
     
@@ -58,31 +36,23 @@ export default class Display extends Component {
         const {goBack} = this.props.navigation
 
         return (
-          
-            <View>
-                <View style={stylesImage.container}>
-                    <View style={stylesInfo.title}>
-                        <Text style={stylesInfo.h1}>{input[0].clothe_leg.clothingModel}</Text>
-                    </View>
-          
-                    <View  style={stylesImage.boxWithShadow}>
-                        <Image style={stylesImage.logo} source={{uri: input[0].clothe_leg.image}} />
-                    </View>
-          
-                    <View style={stylesInfo.infomations}>
-                        <Text style={stylesInfo.h2}>
-                            <Text style={stylesInfo.textHighlight}>Fabricante: </Text>{input[0].clothe_leg.manufacturer}
-                        </Text>
-                        <Text style={stylesInfo.h2}>
-                            <Text style={stylesInfo.textHighlight}>Descrição: </Text>{input[0].clothe_leg.description}
-                        </Text>
-                    </View>
-          
-                    <TouchableOpacity style={stylesInfo.button} onPress={() => goBack()}>
-                        <Text style={stylesInfo.buttonText}>OK</Text>
-                    </TouchableOpacity>
-
+            <View style={stylesInfo.container}>
+                <View style={stylesInfo.title}>
+                    <Text style={stylesInfo.h1}>{input[0].clothe_leg.clothingModel}</Text>
                 </View>
+                <View style={stylesInfo.infomations}>
+                    
+                    <Text style={stylesInfo.h2}>
+                        <Text style={stylesInfo.textHighlight}>Fabricante: </Text>{input[0].clothe_leg.manufacturer}
+                    </Text>
+                    <Text style={stylesInfo.h2}>
+                        <Text style={stylesInfo.textHighlight}>Descrição: </Text>{input[0].clothe_leg.description}
+                    </Text>
+                    
+                </View>
+                <TouchableOpacity style={stylesInfo.button} onPress={() => goBack()}>
+                    <Text style={stylesInfo.buttonText}>OK</Text>
+                </TouchableOpacity>
             </View>
         )
     }
