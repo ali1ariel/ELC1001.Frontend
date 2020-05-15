@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import { Transition } from 'react-native-reanimated'
-
+import { View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native'
 
 const input = [{
     _id: "id_do_look_1",
@@ -100,7 +98,7 @@ const stylesInfo = StyleSheet.create({
         padding: 24,
         borderRadius: 16,
         backgroundColor: 'rgba(237, 237, 237, 0.9)',
-        marginTop: 24,
+        marginBottom: 16,
         width: '90%',
         alignItems: 'center',
         elevation: 2
