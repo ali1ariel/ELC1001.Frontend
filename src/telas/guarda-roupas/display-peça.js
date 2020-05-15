@@ -34,7 +34,7 @@ export default class Display extends Component {
 
         return (
           
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.imageContainer}>
                     <View style={styles.title}>
                         <Text style={styles.h1}>{input[0].clothe_leg.clothingModel}</Text>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
           shadowRadius: 2,  
           elevation: 10,
           borderRadius: 30,
-          backgroundColor: "#fff"
+          backgroundColor: "rgba(237, 237, 237, 0.9)"
       },
 
     container:{
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
         backgroundColor: 'rgba(237, 237, 237, 0.9)',
         marginBottom: 16,
-        width: '90%',
+        width: 250,
         alignItems: 'center',
         elevation: 2
     },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(237, 237, 237, 0.9)',
         marginTop: 16,
         marginBottom: 16,
-        width: '90%',
+        width: 250,
         alignItems:'baseline',
         elevation: 2,
     },
@@ -133,11 +133,10 @@ const styles = StyleSheet.create({
     },
     
     button: {
-        width: '90%',
+        width: 70,
         padding: 18,
         backgroundColor: '#cddada',
-        borderRadius: 16,
-        borderWidth: 0,
+        borderRadius: 100,
         borderColor: '#FFF',
         justifyContent: "center",
         alignItems: 'center',
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
 
     buttonText: {
         fontSize: 18,
-        color: '#000',
+        color: '#55555e',
         marginTop: 4,
         marginBottom: 4,
         fontWeight: 'bold'
