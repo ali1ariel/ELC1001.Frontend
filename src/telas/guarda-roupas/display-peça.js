@@ -59,6 +59,7 @@ export default class Display extends Component {
 }
 
 const stylesInfo = StyleSheet.create({
+    fast: true,
 
     container:{
         flex: 1,
