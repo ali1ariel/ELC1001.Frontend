@@ -16,41 +16,47 @@ export default class Display extends Component {
         const {goBack} = this.props.navigation
 
         return (
-          
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.imageContainer}>
-                    <View style={styles.title}>
-                        <Text style={styles.h1}>{clothe.clothingModel}</Text>
+            <View style={styles.screenContainer}>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                    <View style={styles.imageContainer}>
+                        <View style={styles.title}>
+                            <Text style={styles.h1}>{clothe.clothingModel}</Text>
+                        </View>
+            
+                        <View  style={styles.boxWithShadow}>
+                            <Image style={styles.logo} source={{uri: clothe.image}} />
+                        </View>
+            
+                        <View style={styles.infomations}>
+                            <Text style={styles.h2}>
+                                <Text style={styles.textHighlight}>Fabricante: </Text>{clothe.manufacturer}
+                            </Text>
+                            <Text style={styles.h2}>
+                                <Text style={styles.textHighlight}>Descrição: </Text>{clothe.description}
+                            </Text>
+                        </View>
+            
+                        <TouchableOpacity style={styles.button} onPress={() => goBack()}>
+                            <Text style={styles.buttonText}>OK</Text>
+                        </TouchableOpacity>
                     </View>
-          
-                    <View  style={styles.boxWithShadow}>
-                        <Image style={styles.logo} source={{uri: clothe.image}} />
-                    </View>
-          
-                    <View style={styles.infomations}>
-                        <Text style={styles.h2}>
-                            <Text style={styles.textHighlight}>Fabricante: </Text>{clothe.manufacturer}
-                        </Text>
-                        <Text style={styles.h2}>
-                            <Text style={styles.textHighlight}>Descrição: </Text>{clothe.description}
-                        </Text>
-                    </View>
-          
-                    <TouchableOpacity style={styles.button} onPress={() => goBack()}>
-                        <Text style={styles.buttonText}>OK</Text>
-                    </TouchableOpacity>
-
-                </View>
-            </ScrollView>
+                </ScrollView>
+            </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    screenContainer: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center", 
+        backgroundColor: "#C4D0D0",
+        
+    },
     imageContainer: {
         padding: 50,
-        alignItems: "center",
-        backgroundColor: "#DF928E"
+        alignItems: "center"
       },
 
       logo: {
@@ -118,7 +124,7 @@ const styles = StyleSheet.create({
     button: {
         width: 70,
         padding: 18,
-        backgroundColor: '#cddada',
+        backgroundColor: '#DF928E',
         borderRadius: 100,
         borderColor: '#FFF',
         justifyContent: "center",
